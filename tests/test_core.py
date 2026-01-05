@@ -17,6 +17,7 @@ def test_news_fetcher_parsing(mocker):
         {"title": "Test Title", "link": "https://test.com", "published": "today", "summary": "test summary"}
     ]
     mock_feed.feed = {"title": "Test Source"}
+    mock_feed.bozo = 0
     mocker.patch('feedparser.parse', return_value=mock_feed)
     
     fetcher = NewsFetcher()
